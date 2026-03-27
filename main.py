@@ -6,6 +6,7 @@ import json
 
 app = FastAPI()
 
+# Define the Patient model using Pydantic
 class Patient(BaseModel):
 
     id: Annotated[str, Field(..., description='ID of the patient', examples=['P001'])]
@@ -159,3 +160,4 @@ def delete_patient(patient_id: str):
     save_data(data)
 
     return JSONResponse(status_code=200, content={'message':'patient deleted'})
+
