@@ -35,7 +35,8 @@ class Patient(BaseModel):
             return 'Normal'
         else:
             return 'Obese'
-        
+
+# Define the PatientUpdate model for updating patient information      
 class PatientUpdate(BaseModel):
     name: Annotated[Optional[str], Field(default=None)]
     city: Annotated[Optional[str], Field(default=None)]
